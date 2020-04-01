@@ -1,5 +1,74 @@
 <?php 
+abstract class Karyawan
+{
+    abstract public function hitungKaryawan();
+}
 
+class stayHome extends Karyawan
+{
+    public $nik;
+    public $nama;
+    public $alamat;
+    protected $tanggungan;
+    protected $jumlahkendaraan;
+    private $gaji;
+
+
+    public function setGaji($gaji)
+    {
+        $this->gaji = $gaji;
+    }
+
+    public function getGaji()
+    {
+        return $this->gaji;
+    }
+
+    public function hitungKaryawan()
+    {
+        return ($this->nik . " " . $this->nama . " " . $this->alamat . " " . $this->tanggungan . " " . $this->jumlahkendaraan . " " . $this->gaji);
+    }
+}
+
+$stayhome = new stayHome();
+// echo $stayhome->hitungKaryawan();
+$karyawan_sh = $stayhome->setNik = '1001' . $stayhome->setNama = '<td> Ani </td>' . $stayhome->setAlamat = '<td>Jl. Srengseng Raya</td>' . $stayhome->setTanggungan = '<td>3 Anak</td>' . $stayhome->setJml_kendaraan = '<td>1 Motor</td>' . $stayhome->setGaji = '<td>3000000</td>';
+$karyawan_sh1 = $stayhome->setNik = '1002' . $stayhome->setNama = '<td> Asep </td>' . $stayhome->setAlamat = '<td>Jl. Panjang</td>' . $stayhome->setTanggungan = '<td>1 istri & 3 Anak</td>' . $stayhome->setJml_kendaraan = '<td>1 Motor</td>' . $stayhome->setGaji = '<td>4000000</td>';
+$karyawan_sh2 = $stayhome->setNik = '1003' . $stayhome->setNama = '<td> Alex </td>' . $stayhome->setAlamat = '<td>Jl. Kedoya Selatan</td>' . $stayhome->setTanggungan = '<td>1 istri & 2 Anak</td>' . $stayhome->setJml_kendaraan = '<td>1 Motor & 1 Mobil</td>' . $stayhome->setGaji = '<td>6000000</td>';
+$karyawan_sh3 = $stayhome->setNik = '1004' . $stayhome->setNama = '<td> Siti </td>' . $stayhome->setAlamat = '<td>Jl. Kedoya Utara</td>' . $stayhome->setTanggungan = '<td>2 Anak</td>' . $stayhome->setJml_kendaraan = '<td>1 Motor & 1 Mobil</td>' . $stayhome->setGaji = '<td>6000000</td>';
+$karyawan_sh4 = $stayhome->setNik = '1005' . $stayhome->setNama = '<td> Sugeng </td>' . $stayhome->setAlamat = '<td>Jl. Pintu air</td>' . $stayhome->setTanggungan = '<td>1 istri & 1 Anak</td>' . $stayhome->setJml_kendaraan = '<td>1 Motor</td>' . $stayhome->setGaji = '<td>4500000</td>';
+class Wfh extends Karyawan
+{
+    public $nik;
+    public $nama;
+    public $alamat;
+    protected $tanggungan;
+    protected $jumlahkendaraan;
+    private $gaji;
+
+
+    public function setGaji($gaji)
+    {
+        $this->gaji = $gaji;
+    }
+
+    public function getGaji()
+    {
+        return $this->gaji;
+    }
+
+    public function hitungKaryawan()
+    {
+        return ($this->nik . " " . $this->nama . " " . $this->alamat . " " . $this->tanggungan . " " . $this->jumlahkendaraan . " " . $this->gaji);
+    }
+}
+
+$wfh = new Wfh();
+$karyawan_wfh = $wfh->setNik = '1006' . $wfh->setNama = '<td> Budi </td>' . $wfh->setAlamat = '<td>Jl. Duri kosambi</td>' . $wfh->setTanggungan = '<td> 1 istri & 2 Anak</td>' . $wfh->setJml_kendaraan = '<td>1 Motor</td>' . $wfh->setGaji = '<td>4000000</td>';
+$karyawan_wfh1 = $wfh->setNik = '1007' . $wfh->setNama = '<td> Angel </td>' . $wfh->setAlamat = '<td>Jl. Kedamaian</td>' . $wfh->setTanggungan = '<td>3 Anak</td>' . $wfh->setJml_kendaraan = '<td>2 Motor</td>' . $wfh->setGaji = '<td>4500000</td>';
+$karyawan_wfh2 = $wfh->setNik = '1008' . $wfh->setNama = '<td> Sutris </td>' . $wfh->setAlamat = '<td>Jl. Abadi raya</td>' . $wfh->setTanggungan = '<td>2 istri & 3 Anak</td>' . $wfh->setJml_kendaraan = '<td>2 Motor & 1 Mobil</td>' . $wfh->setGaji = '<td>8000000</td>';
+$karyawan_wfh3 = $wfh->setNik = '1009' . $wfh->setNama = '<td> Kirno </td>' . $wfh->setAlamat = '<td>Jl. Bangun Nusa</td>' . $wfh->setTanggungan = '<td>1 istri & 4 Anak</td>' . $wfh->setJml_kendaraan = '<td>2 Motor</td>' . $wfh->setGaji = '<td>5000000</td>';
+$karyawan_wfh4 = $wfh->setNik = '1010' . $wfh->setNama = '<td> Tuti </td>' . $wfh->setAlamat = '<td>Jl. Semanan raya</td>' . $wfh->setTanggungan = '<td>1 Anak</td>' . $wfh->setJml_kendaraan = '<td>1 Motor</td>' . $wfh->setGaji = '<td>5500000</td>';
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +112,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $karyawan_sh; ?> </td>                           
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_sh1; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_sh2; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_sh3; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_sh4; ?> </td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,12 +149,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $karyawan_wfh; ?> </td>                           
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_wfh1; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_wfh2; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_wfh3; ?> </td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $karyawan_wfh4; ?> </td>
                         </tr>
                     </tbody>
                 </table>
